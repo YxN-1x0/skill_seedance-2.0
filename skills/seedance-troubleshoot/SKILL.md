@@ -8,7 +8,7 @@ tags:
   - troubleshooting
   - seedance-20
 metadata:
-  version: "5.4.1"
+  version: "5.4.2"
   updated: "2026-05-30"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -22,6 +22,8 @@ metadata:
 
 Diagnose failure before rewriting. Do not simply add more adjectives. Identify whether the failure came from mode mismatch, overload, ambiguity, fragile identity, unsafe wording, unsupported platform behavior, or missing preservation constraints.
 
+Load `[ref:field-observed-tips]`, `[ref:reference-workflow]`, and `[ref:api-workflow]` when the failure involves continuation, edit/extend, source clips, audio references, or platform-specific errors.
+
 ## Diagnostic Tree
 
 | Symptom | Likely cause | First repair |
@@ -33,6 +35,9 @@ Diagnose failure before rewriting. Do not simply add more adjectives. Identify w
 | Lip-sync poor | Moving head/camera, long dialogue, unassigned speaker. | Lock framing, shorten line, assign speaker. |
 | VFX noisy | Effect has no source, physics, or dissipation. | Add source, material, path, interaction, and endpoint. |
 | Prompt blocked | Protected IP, real-person, graphic, or bypass-like wording. | Rewrite intent in safe production language without evasion. |
+| Extension quality degrades | No last-frame anchor or too many new variables across continuations. | Use returned last frame as first frame and change one variable. |
+| Audio reference ignored | Competing video sound, no visual beat mapping, or unsupported combo. | Mute competing video and map one visible event to the beat. |
+| Text/logos break | Small text asked to move or be redrawn. | Keep text static, centered, and protected; animate light around it. |
 
 ## Repair Process
 
@@ -45,6 +50,8 @@ First quote the failing phrase or missing element. Then name the root cause. Nex
 ## Escalation Rules
 
 If the same error repeats, split the scene into shorter clips, reduce characters, simplify hand or face motion, use stronger reference role mapping, or change the mode. For unstable text/logos, keep them static, centered, and protected; do not ask the model to redraw small text during motion.
+
+For edit/extend failures, preserve the source clip first and change only the failing layer. If a surface supports returned last frames, use that still as the next first-frame anchor before extending.
 
 ## Output Contract
 

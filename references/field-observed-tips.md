@@ -13,6 +13,8 @@ These are practitioner patterns gathered from public community material. Treat t
 5. Use video references for motion rhythm or camera behavior, not unauthorized identity transfer.
 6. Use audio references for tempo, mood, or ambience unless the voice/music is owned, licensed, or authorized.
 7. Prefer edit, extend, or segment replacement over regenerating a whole clip when only one beat fails.
+8. For continuation, save the returned last frame when the surface supports it and use it as the next first-frame anchor.
+9. If an audio reference should control timing, mute competing reference videos before upload or explicitly lower their role to camera/motion only.
 
 ## Prompt Discipline
 
@@ -31,6 +33,8 @@ These are practitioner patterns gathered from public community material. Treat t
 - Multiple simultaneous camera moves.
 - Product transformations when identity must stay fixed.
 - Real-person faces, voices, celebrity likeness, and protected characters.
+- Long script-like prompts that ask for too many cuts, locations, and character turns in one generation.
+- Extension chains without a last-frame anchor; quality and continuity can degrade across retries.
 
 ## Safe Hidden Trick
 

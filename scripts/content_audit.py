@@ -60,6 +60,7 @@ def main() -> int:
 
     root = Path(args.repo).resolve()
     findings = []
+    archived_findings = []
 
     for path in root.rglob("*"):
         if path.is_file() and should_scan(path, root):
@@ -67,6 +68,21 @@ def main() -> int:
             for phrase, reason in RISK_PHRASES.items():
                 if phrase in text:
                     findings.append((path.relative_to(root).as_posix(), phrase, reason))
+
+    migrated_root = root / "references" / "migrated"
+    if migrated_root.exists():
+        for path in migrated_root.rglob("*.md"):
+            text = path.read_text(encoding="utf-8", errors="ignore")
+            for phrase, reason in RISK_PHRASES.items():
+                if phrase in text:
+                    archived_findings.append((path.relative_to(root).as_posix(), phrase, reason))
+
+    if archived_findings:
+        print("Archived migrated warnings:")
+        for rel, phrase, reason in archived_findings[:20]:
+            print(f"- {rel}: `{phrase}` ({reason})")
+        print("Archived findings are warning-only; active guidance must not rely on migrated claims.")
+        print()
 
     if findings:
         print("Content audit findings:")

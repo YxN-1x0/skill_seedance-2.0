@@ -1,6 +1,14 @@
 # Frontend Redesign
 
-The repository does not currently contain a standalone web app. The public frontend is the GitHub README plus SVG assets.
+The repository does not currently contain a standalone web app. The public frontend is the GitHub README, generated bitmap hero/infographic assets, and SVG support diagrams.
+
+## v5.4.2 Design Goals
+
+- Lead with a real cinematic production-control hero instead of generic abstract graphics.
+- Show Seedance's practical range: references, first/last-frame continuity, product reveal, timeline control, audio, and camera direction.
+- Keep bitmap assets text-free so GitHub renders all important content as searchable Markdown.
+- Keep SVG assets as support diagrams, not the primary emotional surface.
+- Validate README completeness and asset presence with `scripts/design_audit.py`.
 
 ## v5.2 Design Goals
 

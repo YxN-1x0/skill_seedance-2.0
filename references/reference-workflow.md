@@ -19,6 +19,18 @@ Before writing prompt prose, assign every uploaded asset a role. Role mapping pr
 - Use owned, licensed, public-domain, or clearly authorized references.
 - Write what should transfer and what should not transfer.
 - When authorization is unclear, transfer broad motion, tempo, mood, or production function rather than protected identity.
+- Treat multimodal reference generation, video edit, video extend, and first/last-frame generation as separate tasks. They can share assets, but the prompt should name the active workflow.
+- If audio and video references compete, make the video silent when audio timing must dominate, or state that the video controls camera/motion only and `[Audio1]` controls tempo.
+
+## Workflow-Specific Patterns
+
+| Workflow | Use this wording | Avoid |
+|---|---|---|
+| Multimodal reference | `[Image1] controls product identity; [Video1] controls camera rhythm; [Audio1] controls tempo only.` | `Use all references for style.` |
+| Video edit | `[Video1] is the source clip; preserve composition and timing, change only [lighting/background/VFX].` | Regenerating the whole concept from scratch. |
+| Video extend | `[Video1] is the previous clip; continue the same shot for [duration] and preserve last-frame continuity.` | Starting a new scene with no continuity anchor. |
+| First/last frame | `[Image1] is first frame; [Image2] is final visual target; generate the continuous transition only.` | Asking the last frame to be only "mood." |
+| Audio reference | `[Audio1] controls tempo and energy; do not copy protected voice, song, or performance identity.` | Treating audio as authorization proof. |
 
 ## Role Examples
 
@@ -28,6 +40,7 @@ Before writing prompt prose, assign every uploaded asset a role. Role mapping pr
 | Motion transfer | `[Video1] controls side-step choreography only; do not transfer performer, costume, room, or logo.` |
 | Style reference | `[Image2] controls warm bar atmosphere only; product identity remains from [Image1].` |
 | First-last frame | `[Image1] is first frame; [Image2] is target end frame; transition occurs through light sweep, not product deformation.` |
+| Edit/extend | `[Video1] is the source clip; preserve subject and camera path, replace only the failed lighting beat from 3s to 5s.` |
 
 ## Template
 

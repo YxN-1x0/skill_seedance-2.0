@@ -10,7 +10,7 @@ tags:
   - safety
   - seedance-20
 metadata:
-  version: "5.4.1"
+  version: "5.4.2"
   updated: "2026-05-30"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -40,6 +40,8 @@ Preserve the scene function, genre, mood, camera logic, emotional beat, and prod
 ## Authorization Gate
 
 If the user clearly owns the brand, asset, or likeness rights, keep the authorized elements but still preserve them with explicit constraints. If authorization is unclear, ask a short confirmation or provide a safe original rewrite. Do not assume rights from an uploaded image, song, or video.
+
+For real human faces, portraits, or voices, separate three questions: does the active surface support the input, does the user have authorization, and does the prompt avoid imitation of a public figure or private person without consent. Some surfaces use verified virtual portrait assets or authorization flows; do not collapse those into a universal allow or deny rule.
 
 ## Safe Replacement Example
 

@@ -4,7 +4,7 @@ last_verified: 2026-05-30
 
 Use this guide for FLF2V, first-frame/last-frame transitions, Chinese `首帧/尾帧`, or requests to generate the motion between two images.
 
-Source boundary: official ByteDance material supports multimodal references, editing, extension, and R2V examples. The exact `FLF2V` workflow name should be treated as partner/surface-specific unless the active first-party API surface explicitly exposes it.
+Source boundary: official ByteDance material supports multimodal references, editing, extension, and R2V examples. Volcengine now documents first-frame and last-frame roles on its video-generation surface. The exact `FLF2V` label is still product-surface vocabulary, so use the active surface's field names when implementing.
 
 ## Core Principle
 
@@ -18,6 +18,14 @@ The first frame defines where the clip begins. The last frame defines the target
 | Last frame | `[Image2] is the last frame.` | `@图2 为尾帧。` | `[Image2] как последний кадр.` |
 | Identity lock | `Preserve the same subject identity, outfit, shape, and scene logic.` | `保持同一主体、服装、形状和场景逻辑。` | `Сохранить того же персонажа, одежду, форму и логику сцены.` |
 | Transition only | `Generate only the motion between the two frames.` | `只生成两帧之间的连续动作。` | `Сгенерировать только переход между кадрами.` |
+
+## Surface Field Notes
+
+| Surface | Practical wording |
+|---|---|
+| Volcengine/Ark | Use current docs to verify `first_frame`, `last_frame`, `image_with_roles`, duration, resolution, and whether video/audio references can be mixed with first/last-frame mode. |
+| Runway | Use `promptImage` positions such as `first` or `last` on the Runway surface, and recheck the current API docs before assuming field parity with Volcengine. |
+| ComfyUI / partner workflows | `FLF2V` is useful workflow shorthand, but still confirm the node's exact inputs and face/portrait policy. |
 
 ## Prompt Template
 

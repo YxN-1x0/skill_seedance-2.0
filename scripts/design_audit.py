@@ -33,6 +33,8 @@ def main() -> int:
             "## Operating System At A Glance",
             "## Start Here",
             "## Skill Map",
+            "api-workflow.md",
+            "examples-by-mode.md",
             "## Validation",
             "## Design Standard",
         ]:

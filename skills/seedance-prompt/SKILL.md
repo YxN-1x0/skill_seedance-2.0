@@ -8,7 +8,7 @@ tags:
   - video-generation
   - seedance-20
 metadata:
-  version: "5.4.1"
+  version: "5.4.2"
   updated: "2026-05-30"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -21,6 +21,8 @@ metadata:
 # seedance-prompt
 
 Build production-ready Seedance prompts from clear concepts or supplied reference assets. Treat the prompt as a short shooting brief: it must say what changes on screen, what the camera does, what the light and sound contribute, and what must stay stable. Keep final prompts under the platform prompt budget and remove filler before delivery.
+
+Load `[ref:quick-ref]` for the checklist, `[ref:reference-workflow]` for multimodal references, `[ref:i2v-guide]` for image-to-video, `[ref:first-last-frame-guide]` for first/last-frame work, and `[ref:examples-by-mode]` when examples are useful.
 
 ## Director Formula
 
@@ -38,7 +40,7 @@ Use `Subject + Action + Scene + Camera + Lighting/Style + Audio + Constraints`. 
 
 ## Mode Gate
 
-Choose the mode before drafting. **T2V** needs subject, action, scene, camera, light, style, and constraints because nothing is visible yet. **I2V** starts from `[Image1]` and adds only motion, time, camera, lighting transition, audio, and preservation. **V2V** should map `[Video1]` to a role such as camera move, action rhythm, blocking, or atmosphere rather than accidentally transferring identity. **R2V** must list every reference role and state what must not transfer. **FLF2V** uses `[Image1]` as first frame and `[Image2]` as last frame, then describes only the continuous transition.
+Choose the mode before drafting. **T2V** needs subject, action, scene, camera, light, style, and constraints because nothing is visible yet. **I2V** starts from `[Image1]` and adds only motion, time, camera, lighting transition, audio, and preservation. **V2V** should map `[Video1]` to source clip, camera move, action rhythm, blocking, edit target, or extension anchor rather than accidentally transferring identity. **R2V** must list every reference role and state what must not transfer. **FLF2V** uses `[Image1]` as first frame and `[Image2]` as last frame, then describes only the continuous transition.
 
 | Mode | Drafting priority | Common mistake | Repair |
 |---|---|---|---|
@@ -47,6 +49,8 @@ Choose the mode before drafting. **T2V** needs subject, action, scene, camera, l
 | V2V | Transfer motion, camera, or timing. | Copying unauthorized likeness or scene details. | Use owned/licensed/authorized references and restrict transfer role. |
 | R2V | Assign separate roles to each asset. | One reference asked to control identity, pose, scene, and style. | Split roles or prioritize the most important role. |
 | FLF2V | Move from first frame to last frame. | Treating the last frame as vague mood instead of endpoint. | State `[Image2]` is the final visual target. |
+| Edit | Preserve the source clip while changing one layer. | Rewriting the whole scene and losing continuity. | Say `[Video1] is the source clip; change only...` |
+| Extend | Continue from the existing final state. | Starting a new scene after the clip. | Use the last frame as continuity anchor and change one variable. |
 
 ## Prompt Build Process
 
@@ -60,7 +64,7 @@ When the prompt is too long, cut in this order: duplicate style adjectives, gene
 
 Return:
 
-1. Mode: T2V, I2V, V2V, or R2V.
+1. Mode: T2V, I2V, V2V, R2V, FLF2V, edit, or extend.
 2. Reference role map, if any.
 3. Final prompt under 2000 characters.
 4. Optional Chinese compressed version when useful.

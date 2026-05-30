@@ -8,7 +8,7 @@ tags:
   - safe-rewrite
   - seedance-20
 metadata:
-  version: "5.4.1"
+  version: "5.4.2"
   updated: "2026-05-30"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -46,6 +46,8 @@ Use this when a prompt is blocked, degraded, likely to trigger moderation, or ne
 If the user's request is unsafe, refuse or redirect to a safe alternative. If it is safe but poorly worded, repair the wording. When uncertain, state the risk class and offer a conservative prompt that keeps the non-harmful scene function.
 
 Do not provide filter-bypass, evasion, or hidden-word tactics. The safe path is to clarify production intent, remove unsafe identity or harm elements, and rewrite into an original authorized scene.
+
+Face-limit or portrait-verification workarounds are not safe prompt tricks. If a surface offers sanctioned virtual portrait, trusted model-output, or authorization asset flows, route the user to those current official paths instead of evasion language.
 
 Load `[ref:filter-vocab]` for safer substitutions.
 

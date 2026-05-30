@@ -32,6 +32,14 @@ REQUIRED_IDS = {
     "ru_role_binding_multimodal",
     "unsafe_bypass_refusal",
     "community_corpus_safety",
+    "reference_audio_conflict",
+    "zh_official_task_formula",
+    "edit_extend_vs_regenerate",
+    "ru_structured_prompt",
+    "shot_list_continuity",
+    "community_gallery_safety_classification",
+    "vfx_reference_video_repair",
+    "extension_quality_degradation",
 }
 
 

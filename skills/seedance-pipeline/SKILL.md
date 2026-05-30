@@ -9,7 +9,7 @@ tags:
   - integration
   - seedance-20
 metadata:
-  version: "5.4.1"
+  version: "5.4.2"
   updated: "2026-05-30"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -26,15 +26,17 @@ Use this for operational workflows, APIs, web surfaces, post-production, and int
 ## Status Rule
 
 Always load `[ref:api-status]` for current API and platform claims. Load `[ref:model-name-map]` when a user says Pro, Fast, V2, or a wrapper model ID. Do not rely on old release-status memory.
+Load `[ref:api-workflow]` for implementation planning, task lifecycle, Runway/Volcengine field differences, pricing caveats, upload handling, and production readiness.
 
 ## Workflow Split
 
 1. Web workflow: Dreamina/Jimeng surface, references, prompt, output review.
-2. API workflow: BytePlus/ModelArk docs, model ID, auth, file handling, task creation, task retrieval.
+2. API workflow: Volcengine, BytePlus, or Runway docs, model ID, auth, file handling, task creation, polling/querying, cancellation/deletion, task ledger, and retrieval.
 3. Post workflow: stitching, audio cleanup, captions, color, upscale, delivery.
 4. First/last-frame workflow: map first frame, last frame, transition action, identity locks, and ending target.
-5. Community workflow: ComfyUI or unofficial nodes must be labeled community/unverified unless sourced.
-6. Corpus-mining workflow: classify sources before reuse; extract structure and vocabulary, not unsafe raw prompts.
+5. Runway workflow: model `seedance2`, `runway://` uploads, audio-reference combination rules, plan/region caveats, and SDK type lag are Runway-specific.
+6. Community workflow: ComfyUI or unofficial nodes must be labeled community/unverified unless sourced.
+7. Corpus-mining workflow: classify sources before reuse; extract structure and vocabulary, not unsafe raw prompts.
 
 ## Output Contract
 

@@ -104,11 +104,49 @@
       "claims": [
         "tutorial shows Seedance 2.0 and Seedance 2.0 Fast as current Volcengine model options",
         "example model IDs include doubao-seedance-2-0-260128 and doubao-seedance-2-0-fast-260128",
-        "tutorial examples use public URL references for image/video/audio assets"
+        "tutorial examples use public URL references for image/video/audio assets",
+        "current snippets expose first-frame and last-frame role guidance on the Volcengine surface"
       ],
       "volatile_fields": ["model_id", "request_schema", "pricing", "region", "entitlement"],
       "repo_actions": ["refresh model-name map", "keep API claims recheck-required"],
       "do_not_use_for": ["guaranteed availability on every account or region"]
+    },
+    {
+      "id": "volcengine-video-generation-tutorial-2026-05-29",
+      "title": "Volcengine Video Generation Tutorial",
+      "url": "https://www.volcengine.com/docs/82379/2298881?lang=zh",
+      "language": "zh",
+      "source_type": "official_platform_doc",
+      "retrieved_at": "2026-05-30",
+      "published_or_updated": "2026-05-29",
+      "confidence": "medium",
+      "surfaces": ["api", "workflow"],
+      "claims": [
+        "video generation tutorial was observed updated on 2026-05-29 18:39:35",
+        "use as the active Volcengine place to recheck task lifecycle and video-generation workflow fields",
+        "search snippets expose first_frame and last_frame roles, return_last_frame, web_search tools, and reference-file combinations"
+      ],
+      "volatile_fields": ["request_schema", "model_id", "pricing", "region", "face_policy", "input_combinations"],
+      "repo_actions": ["add api-workflow reference", "update first-last-frame boundary", "source-gate API examples"],
+      "do_not_use_for": ["universal BytePlus or Runway API schema"]
+    },
+    {
+      "id": "volcengine-model-pricing-2026-05-28",
+      "title": "Volcengine Ark Model Pricing",
+      "url": "https://www.volcengine.com/docs/82379/1544106?lang=zh",
+      "language": "zh",
+      "source_type": "official_platform_doc",
+      "retrieved_at": "2026-05-30",
+      "published_or_updated": "2026-05-28",
+      "confidence": "medium",
+      "surfaces": ["pricing"],
+      "claims": [
+        "pricing page was observed updated on 2026-05-28 11:40:17",
+        "Volcengine pricing can be discussed only with surface, date, currency, model, and caveat"
+      ],
+      "volatile_fields": ["price", "currency", "model_id", "resolution", "minimum_charge", "calculator_behavior"],
+      "repo_actions": ["narrow no-pricing caveat to BytePlus JS pages", "require recheck wording"],
+      "do_not_use_for": ["BytePlus pricing", "wrapper pricing", "future price guarantees"]
     },
     {
       "id": "volcengine-seedance-20-prompt-guide-2026-05-15",
@@ -197,6 +235,63 @@
       "volatile_fields": ["integration_backend", "real_person_policy"],
       "repo_actions": ["add first-last-frame guide", "add portrait policy matrix"],
       "do_not_use_for": ["official model naming beyond ComfyUI surface"]
+    },
+    {
+      "id": "runway-seedance2-api-guide-2026-05",
+      "title": "Runway Seedance 2 API Guide",
+      "url": "https://docs.dev.runwayml.com/guides/seedance/",
+      "language": "en",
+      "source_type": "official_third_party_surface",
+      "retrieved_at": "2026-05-30",
+      "published_or_updated": "2026-05",
+      "confidence": "high",
+      "surfaces": ["api", "workflow"],
+      "claims": [
+        "Runway API uses model id seedance2",
+        "Runway documents 5-15 second duration and optional image, video, and audio references",
+        "Runway local files use Uploads API and runway:// URIs",
+        "Runway notes SDK types may lag seedance2-specific fields such as referenceAudio",
+        "audio references require a prompt and cannot be the only reference on T2V"
+      ],
+      "volatile_fields": ["region", "plan", "ratio", "sdk_support", "audio_reference_rules", "moderation"],
+      "repo_actions": ["add Runway surface row", "update api-workflow", "add audio-combination caveat"],
+      "do_not_use_for": ["Volcengine field names", "ByteDance official API contract", "pricing outside Runway"]
+    },
+    {
+      "id": "runway-seedance2-help-2026-05",
+      "title": "Runway Creating with Seedance 2.0",
+      "url": "https://help.runwayml.com/hc/en-us/articles/50488490233363-Creating-with-Seedance-2-0",
+      "language": "en",
+      "source_type": "official_third_party_surface",
+      "retrieved_at": "2026-05-30",
+      "published_or_updated": "2026-05",
+      "confidence": "high",
+      "surfaces": ["creator-ui", "workflow"],
+      "claims": [
+        "Runway documents Seedance 2.0 creator workflow and plan/resolution caveats",
+        "Runway web UI behavior should be treated separately from Volcengine or BytePlus API behavior"
+      ],
+      "volatile_fields": ["plan", "resolution", "credit_mode", "moderation", "region"],
+      "repo_actions": ["separate Runway web and API guidance"],
+      "do_not_use_for": ["Volcengine/BytePlus implementation details"]
+    },
+    {
+      "id": "runway-mcp-announcement-2026-05-27",
+      "title": "Runway MCP Announcement",
+      "url": "https://runwayml.com/news/mcp",
+      "language": "en",
+      "source_type": "agent_surface_doc",
+      "retrieved_at": "2026-05-30",
+      "published_or_updated": "2026-05-27",
+      "confidence": "high",
+      "surfaces": ["agent", "mcp"],
+      "claims": [
+        "Runway MCP launched on 2026-05-27",
+        "Runway MCP exposes Seedance 2.0 through MCP-compatible agents tied to the user's Runway account"
+      ],
+      "volatile_fields": ["connector_setup", "plan", "available_models", "regional_access"],
+      "repo_actions": ["add agent-surface note", "avoid treating MCP as ByteDance API availability"],
+      "do_not_use_for": ["Seedance model limits", "Volcengine or BytePlus access"]
     },
     {
       "id": "openai-codex-agent-skills-2026-05",

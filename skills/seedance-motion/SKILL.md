@@ -9,7 +9,7 @@ tags:
   - physics
   - seedance-20
 metadata:
-  version: "5.4.1"
+  version: "5.4.2"
   updated: "2026-05-30"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -22,6 +22,8 @@ metadata:
 # seedance-motion
 
 Use physical verbs and consequences. Motion should be observable on screen, timed within the clip, and assigned to a subject or object. Prefer one strong action with a visible endpoint over several vague actions competing for attention.
+
+Load `[ref:reference-workflow]` for video-motion references and `[ref:examples-by-mode]` for safe edit, extend, and R2V patterns.
 
 ## Motion Contract
 
@@ -38,6 +40,8 @@ State: actor/object, action, force level, timing, physical consequence, continui
 ## Timing Pattern
 
 Use a three-beat structure for short clips: setup, action, changed end state. Example: `0-2s: candle flame steady; 2-4s: door opens and flame bends; 4-6s: smoke trail curls toward the hallway`. Time segmentation is useful for action, VFX, lip-sync, and product demonstrations, but avoid frame-perfect overload unless the user truly needs it.
+
+When sound drives the motion, pair each visible change with one beat or SFX: `door click at 2s, light pulse on the downbeat, hand releases the cup on the final chime`. Do not ask for many cuts, locations, and micro-actions inside one short clip.
 
 ## Reference Motion Rules
 

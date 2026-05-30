@@ -13,10 +13,12 @@ This repository has no application frontend. The user-facing frontend is the Git
 
 ## Asset rules
 
-- SVG only; no external scripts, images, fonts, or tracking.
-- Include `<title>` and `<desc>` for accessibility.
-- Keep hero width at 1200px and height under 520px.
-- Use cards and restrained gradients, not dense decorative noise.
+- Use SVG for diagrams and maps when the content is structural.
+- Use generated bitmap images for the README hero and infographic when the asset needs cinematic texture, real scene depth, or visual storytelling.
+- Bitmap hero/infographic assets should be text-free or nearly text-free, logo-free, and readable at GitHub README width.
+- SVG assets must include `<title>` and `<desc>`.
+- No external scripts, images, fonts, or tracking in SVG assets.
+- Avoid generic lens dashboards, dense decorative noise, and unreadable micro labels.
 
 ## README rules
 

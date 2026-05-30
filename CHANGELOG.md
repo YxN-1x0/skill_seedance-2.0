@@ -2,6 +2,26 @@
 
 All notable changes to this project are documented here.
 
+## [5.4.2] — 2026-05-30
+
+### Added
+
+- Added `references/api-workflow.md` and `references/examples-by-mode.md` so API usage, Runway/Volcengine workflow differences, edit/extend, audio-reference handling, FLF2V, and mode-specific examples are discoverable from active skills.
+- Added new eval coverage for audio-reference conflicts, Chinese official-style reference formulas, edit/extend routing, Russian structured prompts, shot-list continuity, gallery-safety classification, VFX reference repair, and extension degradation.
+- Added richer Runway Seedance 2 and Volcengine May 28-29 source records, including `seedance2`, task lifecycle, first/last-frame role wording, pricing-page caveats, and Runway MCP context.
+
+### Changed
+
+- Rebuilt the README hero image as a cinematic Seedance production-control scene with reference frames, timeline, product reveal, camera rig, and audio waveform.
+- Expanded Japanese, Korean, and Spanish vocabulary references into production-ready tables with reference-tag preservation, camera, motion, lighting, audio, edit, extend, and safety language.
+- Tightened active skill routing so prompt, camera, motion, audio, pipeline, recipe, troubleshoot, copyright, and filter modules load the new deep references when the task needs them.
+- Replaced shallow community-mining records with classified multilingual patterns that preserve reusable structures while rejecting unsafe IP, celebrity, brand, and bypass content.
+
+### Fixed
+
+- Corrected Codex Agent Skill install language so repo-root files are not described as automatically loaded unless installed or scanned from the right path.
+- Kept migrated legacy material warning-only and isolated so stale local notes cannot override current source-gated guidance.
+
 ## [5.4.1] — 2026-05-30
 
 ### Added

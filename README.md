@@ -6,17 +6,17 @@
 
 Text-to-video · Image-to-video · Video-to-video · Reference-to-video · Audio-aware prompting · Copyright-safe rewrites · Agent Skills
 
-[![Version](https://img.shields.io/badge/version-5.4.1-111827?labelColor=0f172a)](#changelog)
+[![Version](https://img.shields.io/badge/version-5.4.2-111827?labelColor=0f172a)](#changelog)
 [![Skills](https://img.shields.io/badge/sub--skills-23-0ea5e9?labelColor=0f172a)](#skill-map)
-[![References](https://img.shields.io/badge/references-29-8b5cf6?labelColor=0f172a)](#reference-library)
-[![Evals](https://img.shields.io/badge/evals-33-22c55e?labelColor=0f172a)](#validation)
+[![References](https://img.shields.io/badge/references-31-8b5cf6?labelColor=0f172a)](#reference-library)
+[![Evals](https://img.shields.io/badge/evals-41-22c55e?labelColor=0f172a)](#validation)
 [![License](https://img.shields.io/badge/license-MIT-f59e0b?labelColor=0f172a)](LICENSE)
 
 Author: [Iamemily2050 (@iamemily2050)](https://github.com/Emily2040) · [Instagram](https://instagram.com/iamemily2050) · [X](https://x.com/iamemily2050) · [Website](https://iamemily2050.com)
 
-Platform context: [ByteDance Seedance 2.0](https://seed.bytedance.com/en/seedance2_0) · [Dreamina](https://dreamina.capcut.com) · [Jimeng](https://jimeng.jianying.com) · [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/2291680)
+Platform context: [ByteDance Seedance 2.0](https://seed.bytedance.com/en/seedance2_0) · Dreamina · Jimeng · Doubao · [Volcengine Ark](https://www.volcengine.com/docs/82379/2291680?lang=zh) · [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/2291680) · [Runway Seedance 2](https://docs.dev.runwayml.com/guides/seedance/)
 
-Updated: **2026-05-30** · **v5.4.1 final source sweep, agent compatibility notes, and infographic polish**
+Updated: **2026-05-30** · **v5.4.2 section-depth refresh, Runway/Volcengine surface updates, deeper vocabulary, and new cinematic hero**
 
 ---
 
@@ -31,10 +31,10 @@ The repository gives an AI assistant a public, auditable operating system for Se
 This skill package turns Seedance 2.0 work into a repeatable assistant workflow:
 
 - Routes vague ideas into short creative interviews instead of premature prompt dumps.
-- Writes full or compressed prompts for T2V, I2V, V2V, R2V, audio-aware, and first/last-frame workflows.
+- Writes full or compressed prompts for T2V, I2V, V2V, R2V, FLF2V, edit, extend, audio-aware, and first/last-frame workflows.
 - Separates every reference asset by role: identity, environment, motion, camera rhythm, audio tempo, style, or endpoint.
 - Keeps model and platform claims source-dated so API, pricing, region, quota, and model-ID details are not guessed.
-- Provides multilingual cinematic vocabulary in Chinese, Japanese, Korean, Spanish, and Russian.
+- Provides deeper multilingual cinematic vocabulary in Chinese, Japanese, Korean, Spanish, and Russian, including role binding, first/last-frame phrasing, edit/extend wording, safety wording, and audio cues.
 - Rewrites unsafe celebrity, protected IP, private-person, brand, logo, song, or voice requests into safer creative equivalents.
 - Diagnoses failed outputs with concrete repair levers: camera, lighting, motion, reference role, duration, framing, audio, or safety wording.
 - Ships validation scripts, eval cases, source data, and design checks so maintainers can review changes before release.
@@ -50,6 +50,7 @@ This skill package turns Seedance 2.0 work into a repeatable assistant workflow:
 | “Use this as first frame and that as final frame.” | [`first-last-frame-guide`](references/first-last-frame-guide.md) | A continuous transition with endpoint locks. |
 | “It failed or looks bad.” | [`seedance-troubleshoot`](skills/seedance-troubleshoot/SKILL.md) | A root-cause diagnosis and repaired prompt. |
 | “This uses a character, brand, celebrity, or real person.” | [`seedance-copyright`](skills/seedance-copyright/SKILL.md) | A safer rewrite preserving the creative function. |
+| “I need API, Runway, pricing, model ID, or production workflow guidance.” | [`api-workflow`](references/api-workflow.md) | A source-gated operational checklist. |
 | “Is this Seedance Pro/Fast/V2?” | [`model-name-map`](references/model-name-map.md) | Source-dated naming and surface caveats. |
 | “I am installing or reviewing this as an agent skill.” | [`agent-compatibility`](references/agent-compatibility.md) | Codex/Agent Skills structure and distribution notes. |
 
@@ -57,7 +58,11 @@ This skill package turns Seedance 2.0 work into a repeatable assistant workflow:
 
 Seedance platform behavior changes quickly. Before making factual claims about API availability, face or portrait authorization, upload limits, pricing, regional availability, or model names, load [`references/api-status.md`](references/api-status.md) and check its `last_verified` date.
 
-As of 2026-05-30, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs. Official launch and model-card material says references can include up to 9 images, 3 video clips, and 3 audio clips. Volcengine's May 29 tutorial keeps `doubao-seedance-2-0-260128` and `doubao-seedance-2-0-fast-260128` visible as current Ark model IDs, but access, pricing, upload limits, regions, and authorization requirements remain surface-specific.
+As of 2026-05-30, public official sources describe Seedance 2.0 as supporting text, image, audio, and video inputs. Official launch and model-card material says references can include up to 9 images, 3 video clips, and 3 audio clips.
+
+Volcengine's May 29 docs keep `doubao-seedance-2-0-260128` and `doubao-seedance-2-0-fast-260128` visible as current Ark model IDs and document first/last-frame role usage on that surface. Runway documents `seedance2` with 5-15 second duration and optional image, video, and audio references.
+
+Access, pricing, upload limits, regions, resolution, audio-combination rules, and authorization requirements remain surface-specific.
 
 ## Research Snapshot
 
@@ -133,6 +138,8 @@ The visual map is intentionally text-light so it remains clean in GitHub and reu
 | [`source-registry.md`](references/source-registry.md) | Source hierarchy and evidence labels. |
 | [`research-2026-05-30.md`](references/research-2026-05-30.md) | Dated source and field-observation snapshot. |
 | [`agent-compatibility.md`](references/agent-compatibility.md) | Agent Skills structure, Codex compatibility, and packaging notes. |
+| [`api-workflow.md`](references/api-workflow.md) | Volcengine, BytePlus, Runway, async task, reference-file, pricing, and production workflow checklist. |
+| [`examples-by-mode.md`](references/examples-by-mode.md) | Mode-specific prompt examples for T2V, I2V, V2V, R2V, FLF2V, edit, extend, and troubleshooting. |
 | [`platform-surface-matrix.md`](references/platform-surface-matrix.md) | Model-vs-surface claim boundaries. |
 | [`model-name-map.md`](references/model-name-map.md) | Seedance naming, Fast variant, and Pro-label caveats. |
 | [`first-last-frame-guide.md`](references/first-last-frame-guide.md) | FLF2V, first-frame, and last-frame prompting. |
@@ -161,7 +168,11 @@ The visual map is intentionally text-light so it remains clean in GitHub and reu
 
 ## Install
 
-Client support for Agent Skills is still tool-specific. Codex documents a skill as a directory with a required `SKILL.md`, optional `scripts/`, `references/`, `assets/`, and optional `agents/` metadata. It also distinguishes local skill authoring from plugins, which are the installable distribution unit for reusable skills and apps. This repository follows the skill-folder shape at the root and keeps dense facts in references so the active skill stays small.
+Client support for Agent Skills is still tool-specific. Codex documents a skill as a directory with a required `SKILL.md`, optional `scripts/`, `references/`, `assets/`, and optional `agents/` metadata.
+
+Codex scans `.agents/skills` locations from the working directory upward, plus user/admin/system skill locations. A repository root with `SKILL.md` is shaped like a skill folder, but it still needs to be installed/copied under a scanned skills directory or distributed as a plugin for automatic discovery.
+
+This repository keeps dense facts in references so the active skill stays small.
 
 If your client supports installing a skill directly from a GitHub repository, use this repository URL:
 
@@ -201,7 +212,7 @@ The v5.4 front page uses a generated cinematic bitmap hero, a generated operatin
 
 ## Changelog
 
-See [`CHANGELOG.md`](CHANGELOG.md). Current release: **v5.4.1**.
+See [`CHANGELOG.md`](CHANGELOG.md). Current release: **v5.4.2**.
 
 ## License
 

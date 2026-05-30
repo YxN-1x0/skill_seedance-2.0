@@ -8,7 +8,7 @@ from datetime import date
 from pathlib import Path
 
 REQUIRED_LABELS = ["confirmed", "volatile", "field-observed", "unverified", "internal"]
-REQUIRED_OFFICIAL_MARKERS = ["seed.bytedance.com", "volcengine.com", "arxiv.org"]
+REQUIRED_OFFICIAL_MARKERS = ["seed.bytedance.com", "volcengine.com", "arxiv.org", "runwayml.com"]
 
 
 def parse_date(text: str) -> date | None:
@@ -76,8 +76,8 @@ def main() -> int:
             errors.append(f"source data JSON parse error: {exc}")
         else:
             sources = data.get("sources")
-            if not isinstance(sources, list) or len(sources) < 6:
-                errors.append("source data must contain at least six source records")
+            if not isinstance(sources, list) or len(sources) < 20:
+                errors.append("source data must contain at least twenty source records")
             else:
                 for i, source in enumerate(sources):
                     for key in ["id", "title", "url", "language", "source_type", "retrieved_at", "confidence", "claims"]:

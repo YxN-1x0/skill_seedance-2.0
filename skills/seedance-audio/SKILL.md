@@ -9,7 +9,7 @@ tags:
   - dialogue
   - seedance-20
 metadata:
-  version: "5.4.1"
+  version: "5.4.2"
   updated: "2026-05-30"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -22,6 +22,8 @@ metadata:
 # seedance-audio
 
 Use this for dialogue, lip-sync, sound layers, music, ambience, beat-sync, audio-reference mapping, desync troubleshooting, or sound-driven visual timing. Audio should support the visible beat instead of becoming a second competing prompt.
+
+Load `[ref:audio-guide]` for detailed constraints, beat-sync, desync repair, audio-reference conflicts, and multi-character workarounds.
 
 ## Core Rules
 
@@ -47,7 +49,7 @@ Use one speaker per short clip when reliability matters. If two characters must 
 
 If dialogue desyncs, shorten the line, lock the camera, remove head turns, clean the audio role, and reduce competing SFX. If the wrong speaker talks, assign tags and split lines by speaker. If audio is ignored, remove extra music/SFX instructions and make the reference role explicit.
 
-Load `[ref:audio-guide]` for detailed constraints, beat-sync, desync repair, and multi-character workarounds.
+If audio and video references fight each other, mute the reference video before upload when possible, or make the priority explicit: `[Video1] controls camera only; [Audio1] controls tempo and energy`.
 
 ## Output Contract
 

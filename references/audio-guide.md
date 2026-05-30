@@ -15,12 +15,15 @@ Use this reference for detailed audio, dialogue, beat-sync, ambience, and lip-sy
 
 `[Audio1]` can be used for rhythm, pacing, mood, voice tone, ambience, music texture, or beat timing. Do not promise exact audio playback unless the active platform documents exact playback behavior. If the source contains a real voice or recognizable song, treat it as authorization-sensitive and convert it into broad sonic descriptors when rights are unclear.
 
+When an audio reference and video reference compete, silence or mute the video reference before upload when the audio should control timing. If the video must keep sound, state the priority: `[Video1] controls only camera/motion; [Audio1] controls tempo and energy`.
+
 | Role | Good wording | Avoid |
 |---|---|---|
 | Tempo | `[Audio1] provides tempo only; foot taps match the downbeat` | copying a protected performance |
 | Mood | `[Audio1] provides calm sparse atmosphere` | exact replay claim |
 | Voice tone | `soft, breathy, close-mic delivery` | imitating a named real voice |
 | Ambience | `rainy street room tone, distant traffic bed` | dense competing sound layers |
+| Conflict repair | `[Video1] is muted and controls camera only; [Audio1] controls beat timing` | two sources both controlling rhythm |
 
 ## Multi-character dialogue
 
@@ -41,3 +44,4 @@ Use separate speaker turns when reliability matters. For two-person exchanges, g
 - Audio ignored: remove competing music/SFX instructions and make `[Audio1]` role explicit.
 - Overbusy mix: choose ambience plus one key SFX; remove music if dialogue matters.
 - Lip-sync drift: use a locked medium close-up, no head turn, short quoted line, and simple expression.
+- Audio-reference conflict: mute the video reference, remove competing SFX/music, and describe one visible event per beat.

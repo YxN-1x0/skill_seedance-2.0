@@ -10,7 +10,7 @@ ALLOWED_FUNCTIONS = {
     "Role", "FirstLastFrame", "Camera", "Shot", "Lens", "Lighting", "Motion",
     "VFX", "Audio", "Text", "Editing", "Constraint", "Constraints", "Safety",
 }
-STRICT_REQUIRED_FOR_ZH_RU = {"Role", "FirstLastFrame", "Camera", "Audio", "Constraint", "Safety"}
+STRICT_REQUIRED_FUNCTIONS = {"Role", "FirstLastFrame", "Camera", "Audio", "Constraint", "Safety"}
 PROTECTED_TERMS = ["Studio Ghibli", "Ghibli", "Spider-Man", "Disney", "Marvel"]
 
 
@@ -53,7 +53,7 @@ def main() -> int:
             errors.append(f"{rel}: missing Function vocabulary table")
 
         rows = table_rows(text)
-        min_rows = 40 if lang in {"zh", "ru"} else 10
+        min_rows = 40
         if args.strict and len(rows) < min_rows:
             errors.append(f"{rel}: expected at least {min_rows} rows, found {len(rows)}")
 
@@ -66,8 +66,8 @@ def main() -> int:
             if not function or not term or not meaning:
                 errors.append(f"{rel}: row {i} has an empty cell")
 
-        if args.strict and lang in {"zh", "ru"}:
-            missing = STRICT_REQUIRED_FOR_ZH_RU - functions
+        if args.strict:
+            missing = STRICT_REQUIRED_FUNCTIONS - functions
             if missing:
                 errors.append(f"{rel}: missing strict functions " + ", ".join(sorted(missing)))
 
@@ -75,7 +75,7 @@ def main() -> int:
             if protected in text:
                 errors.append(f"{rel}: protected term `{protected}` should not appear in active vocab")
 
-        if lang in {"zh", "ru"} and not re.search(r"\[Image1\].*\[Video1\]|\[Image1\].*\[Audio1\]", text, re.S):
+        if not re.search(r"\[Image1\].*\[Video1\]|\[Image1\].*\[Audio1\]", text, re.S):
             errors.append(f"{rel}: expected unchanged reference tag examples")
 
     if errors:

@@ -31,14 +31,18 @@ This repository follows that pattern:
 
 ## Cross-Client Notes
 
-Different agent clients scan different local paths. Codex documentation says repository skills can live under `.agents/skills` at the current directory, parent directories, or repository root. Other agent clients may use `.claude/skills`, `.gemini/skills`, `.github/skills`, `.cursor/skills`, or `.windsurf/skills`. Treat those as installation targets, not separate source trees.
+Different agent clients scan different local paths. Codex documentation says Codex scans `.agents/skills` locations from the current directory upward, plus user/admin/system skill locations. A repository root with `SKILL.md` has the right skill-folder shape, but it is not automatically discovered as a repository skill unless installed under a scanned skill directory or packaged through the relevant plugin/distribution path. Other agent clients may use `.claude/skills`, `.gemini/skills`, `.github/skills`, `.cursor/skills`, or `.windsurf/skills`. Treat those as installation targets, not separate source trees.
+
+Runway MCP is a separate agent connector surface. It can expose Seedance 2.0 through Runway inside MCP-compatible agents, but it does not make this repository a Runway plugin and does not change Codex skill installation rules.
 
 ## Source Signals
 
 - OpenAI Codex Agent Skills docs: https://developers.openai.com/codex/skills
+- OpenAI Codex Plugins docs: https://developers.openai.com/codex/plugins
 - OpenAI Academy plugins and skills explainer: https://openai.com/academy/codex-plugins-and-skills/
 - OpenAI skills catalog: https://github.com/openai/skills
 - Agent Skills open standard overview: https://agentskills.io/
+- Runway MCP announcement: https://runwayml.com/news/mcp
 
 ## Do Not Claim
 
