@@ -72,5 +72,5 @@
 
   <line x1="72" y1="382" x2="1128" y2="382" class="hair"/>
   <text x="74" y="406" class="spec-bright">ROUTE · VERIFY · DIRECT · DELIVER</text>
-  <text x="868" y="406" class="spec">T2V · I2V · V2V · R2V · FLF2V</text>
+  <text x="1128" y="406" text-anchor="end" class="spec">T2V · I2V · V2V · R2V · FLF2V</text>
 </svg>
